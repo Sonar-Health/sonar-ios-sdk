@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = 'SonarSDK'
-  s.version             = '0.1.0'
+  s.version             = '0.1.1'
   s.summary             = 'Syncs Apple Health data to Sonar.'
   s.homepage            = 'https://docs.sonarhealth.co/ios-sdk/'
   s.license             = { type: 'Proprietary', file: 'LICENSE' }
