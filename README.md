@@ -20,10 +20,10 @@ background, and keeps its place; your backend reads the normalized data from the
 Swift Package Manager: add `https://github.com/Sonar-Health/sonar-ios-sdk.git`, version `0.1.0` or
 newer, and the `SonarSDK` product to your app target.
 
-CocoaPods:
+CocoaPods (the pod is not on the CocoaPods trunk; point at the podspec of a release):
 
 ```ruby
-pod 'SonarSDK', '~> 0.1.0'
+pod 'SonarSDK', :podspec => 'https://raw.githubusercontent.com/Sonar-Health/sonar-ios-sdk/0.1.1/SonarSDK.podspec'
 ```
 
 ## Set up the app target
@@ -39,6 +39,11 @@ pod 'SonarSDK', '~> 0.1.0'
 <array>
     <string>co.sonarhealth.sdk.refresh</string>
     <string>co.sonarhealth.sdk.backfill</string>
+</array>
+<key>UIBackgroundModes</key>
+<array>
+    <string>fetch</string>
+    <string>processing</string>
 </array>
 ```
 
