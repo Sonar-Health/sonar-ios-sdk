@@ -17,13 +17,13 @@ background, and keeps its place; your backend reads the normalized data from the
 
 ## Install
 
-Swift Package Manager: add `https://github.com/Sonar-Health/sonar-ios-sdk.git`, version `0.1.0` or
+Swift Package Manager: add `https://github.com/Sonar-Health/sonar-ios-sdk.git`, version `0.1.2` or
 newer, and the `SonarSDK` product to your app target.
 
 CocoaPods (the pod is not on the CocoaPods trunk; point at the podspec of a release):
 
 ```ruby
-pod 'SonarSDK', :podspec => 'https://raw.githubusercontent.com/Sonar-Health/sonar-ios-sdk/0.1.1/SonarSDK.podspec'
+pod 'SonarSDK', :podspec => 'https://raw.githubusercontent.com/Sonar-Health/sonar-ios-sdk/0.1.2/SonarSDK.podspec'
 ```
 
 ## Set up the app target
@@ -64,7 +64,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions opt
 Once your user is signed in, on every launch:
 
 ```swift
-try await Sonar.authenticate { context in
+try await Sonar.authenticate(userId: currentUser.id) { context in
     // Your backend calls POST /v1/users/{id}/sdk-sessions with its API key and returns client_token.
     try await myBackend.sonarClientToken(installationId: context.installationId)
 }
@@ -74,7 +74,8 @@ try await Sonar.connect(.appleHealth)
 ```
 
 After `connect`, the SDK syncs on its own: in the foreground, when HealthKit reports changes, and in
-background tasks. The first sync brings recent data first, then up to two years of history.
+background tasks. The first sync brings recent data first, then two years of history. `Sonar.configure(appId:historyDays:)`
+chooses another period, from 30 days to five years (1825).
 
 | Call | What it does |
 | --- | --- |
