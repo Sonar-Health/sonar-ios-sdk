@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.3
+
+- Health types the user has not answered the permission sheet for no longer stop syncing. The other
+  types keep syncing, and each pending type imports its history once the user allows it.
+- While some types are pending, the state shows `request_permission`. Calling `connect` again shows
+  the sheet for those types.
+- When Health is restricted on the phone, the state shows `open_settings` instead of `contact_support`.
+- The diagnostics log names each type waiting for permission, and records runs that fail unexpectedly.
+
 ## 0.1.2
 
 - `authenticate(userId:clientTokenProvider:)` takes your own ID for the signed-in user. When it changes,
