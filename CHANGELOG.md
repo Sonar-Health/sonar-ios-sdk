@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.4
+
+- Apps built without Swift's `NonisolatedNonsendingByDefault` no longer crash in `authenticate`. Every
+  public async call is now `@concurrent`, as is `ClientTokenProvider`; rebuild your app against 0.1.4.
+- The same user signing back in on the same app picks the sync up where it stopped instead of importing
+  the history again. Anyone else still starts clean.
+- After a clean run the SDK sends Sonar the apps the phone holds sleep and workout data from, when that
+  list changes and at least once a day.
+- A foreground run imports up to 120 days of history, up from 30, so a new connection fills faster.
+- The diagnostics log records why an upload did not land: the error, the HTTP status, or a failed
+  session token.
+
 ## 0.1.3
 
 - Health types the user has not answered the permission sheet for no longer stop syncing. The other

@@ -17,13 +17,13 @@ background, and keeps its place; your backend reads the normalized data from the
 
 ## Install
 
-Swift Package Manager: add `https://github.com/Sonar-Health/sonar-ios-sdk.git`, version `0.1.2` or
+Swift Package Manager: add `https://github.com/Sonar-Health/sonar-ios-sdk.git`, version `0.1.4` or
 newer, and the `SonarSDK` product to your app target.
 
 CocoaPods (the pod is not on the CocoaPods trunk; point at the podspec of a release):
 
 ```ruby
-pod 'SonarSDK', :podspec => 'https://raw.githubusercontent.com/Sonar-Health/sonar-ios-sdk/0.1.2/SonarSDK.podspec'
+pod 'SonarSDK', :podspec => 'https://raw.githubusercontent.com/Sonar-Health/sonar-ios-sdk/0.1.4/SonarSDK.podspec'
 ```
 
 ## Set up the app target
