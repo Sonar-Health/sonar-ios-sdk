@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.5
+
+- `Sonar.observeWorkouts(_:)` calls you on the main actor when Sonar accepts workouts that are new on
+  this phone, with each workout's id, activity type, indoor flag and times. It never fires for the
+  import of past data. Apple Health can wake the app to deliver them, so register at launch and keep
+  the returned `SonarObservation`.
+- `ProviderState.lastDataSentAt` says when this phone last sent new records or deletions. A sync that
+  finds nothing new leaves it unchanged, so comparing it with `lastSuccessfulSyncAt` tells whether
+  Sonar has new data to process.
+
 ## 0.1.4
 
 - Apps built without Swift's `NonisolatedNonsendingByDefault` no longer crash in `authenticate`. Every
