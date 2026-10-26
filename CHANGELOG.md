@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.6
+
+- A phone where no app records a Health type, such as resting energy on iOS 27, no longer stops syncing
+  at that type. Health reports such a type as having no data source; the SDK now reads it as empty and
+  carries on with the rest, so the import finishes instead of retrying the same step.
+- A new installation, a new phone or another account on this phone picks up the user's Apple Health
+  connection when their Sonar account already holds it elsewhere. It connects silently when Health
+  access needs no sheet; otherwise the state shows `connect_provider` for your app to ask.
+
 ## 0.1.5
 
 - `Sonar.observeWorkouts(_:)` calls you on the main actor when Sonar accepts workouts that are new on
