@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.7
+
+- The 0.1.6 fix now works on iOS 27: Health reports a type no app records, such as resting energy,
+  as an invalid-argument error, which 0.1.6 still treated as a failure, so the import kept stopping at
+  that type. The SDK now reads it as empty and carries on, and its diagnostics say which type had no source.
+
 ## 0.1.6
 
 - A phone where no app records a Health type, such as resting energy on iOS 27, no longer stops syncing
