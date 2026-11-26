@@ -10,8 +10,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SonarSDK",
-            url: "https://github.com/Sonar-Health/sonar-ios-sdk/releases/download/0.1.7/SonarSDK.xcframework.zip",
-            checksum: "df130a84f06ea6196add64c52b0045dfe254bf81fd533fa4f53dd3a51633d89f"
+            url: "https://github.com/Sonar-Health/sonar-ios-sdk/releases/download/0.1.8/SonarSDK.xcframework.zip",
+            checksum: "28db4d1591743be185bb0a44935d1b11ebc36098416df4367e70849c3c98f0a7"
         ),
     ]
 )

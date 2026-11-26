@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.8
+
+- A user who signs back in on a phone where another account signed in meanwhile picks the connection
+  back up, and the sync goes on where it stopped instead of importing the whole history again. Each
+  installation keeps the sync position of its last five signed-out users.
+
 ## 0.1.7
 
 - The 0.1.6 fix now works on iOS 27: Health reports a type no app records, such as resting energy,
